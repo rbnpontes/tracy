@@ -2,7 +2,8 @@
 
 echo Building Windows
 CALL cmake -S . -B ./build-windows -DTRACY_ENABLE=ON -DTRACY_FIBERS=ON^
-    -DTRACY_MANUAL_LIFETIME=ON -DTRACY_DELAYED_INIT=ON -DBUILD_SHARED_LIBS=ON
+    -DTRACY_MANUAL_LIFETIME=ON -DTRACY_DELAYED_INIT=ON -DBUILD_SHARED_LIBS=ON^
+    -DCMAKE_BUILD_TYPE="Release" 
 CALL cmake --build build-windows --config Release
 echo Finished
 
