@@ -4506,6 +4506,16 @@ TRACY_API int ___tracy_profiler_started( void )
 }
 #  endif
 
+TRACY_API uint64_t ___tracy_malloc( size_t size )
+{
+    return uint64_t( tracy::tracy_malloc(size) );
+}
+
+TRACY_API void ___tracy_free( uint64_t address )
+{
+    tracy::tracy_free( reinterpret_cast<void*>( address ) );
+}
+
 #ifdef __cplusplus
 }
 #endif
